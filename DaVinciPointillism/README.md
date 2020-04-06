@@ -2,4 +2,4 @@
 
 This algorithm loads the image of Monalisa, and using the pontillism technique, generates a new version of it.
 
-![Mosalisa](https://github.com/DanielBrito/creative-coding-experiments/tree/master/DaVinciPointillism/monalisa.gif)
+![Mosalisa](https://github.com/DanielBrito/creative-coding-experiments/blob/master/DaVinciPointillism/monalisa.gif)
