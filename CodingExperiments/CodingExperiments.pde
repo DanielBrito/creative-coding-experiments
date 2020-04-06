@@ -1,19 +1,45 @@
-int yPos = 130;
-boolean mixture = false;
-boolean drop = false;
-int alpha = 255;
-float speed = 0.5;
+// To store the position (y-axis) of the letter 'e':
+int yPositionE;
 
+// To indicate when the color of the liquid has to be changed:
+boolean mixture;
+ 
+// To indicate when the letter 'e' falls (after a mouse click):
+boolean falling;
+
+// To control the transparency of the letter 'e':
+int alpha;
+
+// To control the speed of the letter 'e' during the fall:
+float speed;
+
+// To store the background image:
 PImage img;
 
-Bubble[] bubbles = new Bubble[20];
+// To store the bubbles:
+Bubble[] bubbles;
 
 void setup() {
 
     size(640, 460);
+
+    // Configuring the scene:
+    
+    yPositionE = 130;
+    mixture = false;
+    falling = false;
+    alpha = 255;
+    speed = 0.5;
+    
     img = loadImage("background.jpg");
     
+    // Generating the bubbles:
+    
+    bubbles = new Bubble[20];
+
     for (int i=0; i<bubbles.length; i++) {
+        
+        // Generating bubbles with random (10 to 20 pixels) of diameter:
         bubbles[i] = new Bubble(random(10, 20));
     }
 }
@@ -21,29 +47,34 @@ void setup() {
 void draw() {
 
     background(255);
-    loadBackground();
     
+    loadBackground();
+
+    // Setting up the bubbles on the screen:
     for (int i=0; i<bubbles.length; i++) {
+        
         bubbles[i].ascend();
         bubbles[i].display();
         bubbles[i].top();
     }
 
+    // Displaying elements:
+    
     title();
     name();
     table();
 
     experimentA();
-    tuboDeEnsaio();
+    testTube();
 
     experimentB();
     letter();
     bequer();
 }
 
+// To set the elements of the title:
 void title() {
-
-    // Text:
+    
     textAlign(CENTER);
     textSize(45);
     fill(0);
@@ -54,8 +85,6 @@ void title() {
     fill(0);
     text("Experim  nts", 410, 130);
 
-
-    // Curly bracklets:
     textSize(60);
     fill(200, 0, 200);
     text("{", 30, 70);
@@ -65,22 +94,32 @@ void title() {
     text("}", 578, 135);
 }
 
+// To set the characteristics of the letter 'e':
 void letter() {
+    
     textSize(50);
     fill(0, 0, 255, alpha);
-    text("e", 472, yPos);
+    text("e", 472, yPositionE);
 
-    if (yPos<400 && drop) {
-        yPos += 1*speed;
+    // Controls when and how the letter should fall:
+    if (yPositionE<400 && falling) {
+        
+        yPositionE += 1*speed;
         speed += 0.1;
     }
 
-    if (yPos>340) {
+    // Check if its position is equal to the liquid (which starts at the position 340):
+    if (yPositionE>340) {
+     
+        // To start changing the color of the liquid:
         mixture = true;
+        
+        // Increase the transparency to give an impression of dissolution:
         alpha -= 20;
     }
 }
 
+// To set the name on the screen:
 void name() {
 
     textAlign(CENTER);
@@ -89,6 +128,8 @@ void name() {
     text("/* by Daniel Brito */", width/2, 180);
 }
 
+
+// To set the table on the screen:
 void table() {
 
     stroke(0);
@@ -97,6 +138,7 @@ void table() {
     rect(0, 400, width, height-400);
 }
 
+// To set the bequer on the table:
 void bequer() {
 
     stroke(0);
@@ -106,7 +148,8 @@ void bequer() {
     rect(400, 280, 130, 120);
 }
 
-void tuboDeEnsaio() {
+// To set the test-tube on the table:
+void testTube() {
 
     stroke(0);
     strokeWeight(2);
@@ -122,6 +165,7 @@ void tuboDeEnsaio() {
     endShape(CLOSE);
 }
 
+// To set the red liquid inside the test-tube:
 void experimentA() {
 
     stroke(255, 0, 0);
@@ -136,22 +180,31 @@ void experimentA() {
     endShape(CLOSE);
 }
 
+// To set the yellow/green liquid inside the bequer:
 void experimentB() {
 
+    // If the letter touches the liquid:
     if (mixture) {
 
+        // The liquid starts when the y-axis value is 320 and go until 400:
         for (int y=320; y<=400; y++) {
-
-            if (y<=yPos) {
+            
+            // Starts changing the color of each line the letter 'e' passes by:
+            if (y<=yPositionE) {
 
                 stroke(0, 255, 0);
                 line(400, y, 530, y);
-            } else {
+            } 
+            // Otherwise, the color continues the same:
+            else {
+                
                 stroke(255, 255, 0);
                 line(400, y, 530, y);
             }
         }
-    } else {
+    } 
+    // Otherwise, the color continues the same:
+    else {
 
         for (int y=320; y<=400; y++) {
 
@@ -161,24 +214,29 @@ void experimentB() {
     }
 }
 
+// To interact with the user through the mouse:
 void mousePressed() {
 
-    drop = true;
+    // Makes the letter 'e' fall:
+    falling = true;
 }
 
+// To interact with the user through the keyboard:
 void keyPressed() {
 
     reset();
 }
 
+// To restore the default configuration:
 void reset() {
 
     alpha = 255;
-    yPos = 130;
-    drop = false;
+    yPositionE = 130;
+    falling = false;
     speed = 0.5;
 }
 
+// To load each pixel of the background image:
 void loadBackground() {
 
     image(img, 0, 0, width, height);
