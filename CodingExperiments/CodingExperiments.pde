@@ -189,7 +189,7 @@ void experimentA() {
 // To set the yellow/green liquid inside the bequer:
 void experimentB() {
 
-    // If the letter has touched touched the liquid:
+    // If the letter has touched the liquid:
     if (mixture) {
 
         // Display dissolving effect if the letter reaches the bottom of the bequer:
@@ -236,7 +236,7 @@ void mousePressed() {
 // To interact with the user through the keyboard:
 void keyPressed() {
 
-    //reset();
+    reset();
 }
 
 // To restore the default configuration:
