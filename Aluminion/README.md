@@ -8,8 +8,8 @@ Atualmente, tenho focado minhas pesquisas no campo do Design Generativo e da Mod
 
 Por que eu não pego todo o conhecimento de programação com Processing e de Visão Computacional que venho adquirido e aplico nos [Aluminions](https://www.instagram.com/aluminions.13/)?
 
-Para começar, decidi criar algo simples. Desenvolvi um algoritmo que mapeia os pixels de uma imagem de um aluminion e faz com o olhar dele siga o cursor do mouse.
+Para começar, decidi criar algo simples. Desenvolvi um algoritmo que mapeia os pixels de uma imagem de um Aluminion e faz com o olhar dele siga o cursor do mouse.
 
-Pode parecer bobo, mas vocês não sabem o tanto de possibilidades que tenho em mente, quando aplicar conceitos mais avançados. Estou até um pouco desnorteado depois desse insight.
+Pode parecer bobo, mas vocês não sabem o tanto de possibilidades que tenho em mente, quando aplicar conceitos mais avançados.
 
 ![Aluminion](https://github.com/DanielBrito/creative-coding-experiments/blob/master/Aluminion/aluminion.gif)
