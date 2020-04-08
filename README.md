@@ -14,6 +14,7 @@ ___
 
 * POSTS
   * [Aventure-se no mundo da "Programação Criativa" (Olhar Digital)](https://olhardigital.com.br/noticia/aventure-se-no-mundo-da-arte-e-da-tecnologia-com-a-programacao-criativa/32798)
+  * [Creative Coding (Wikipedia)](https://en.wikipedia.org/wiki/Creative_coding)
 
 * WEBSITES
   * [Processing](https://processing.org/)
