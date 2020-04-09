@@ -39,7 +39,7 @@ void draw() {
     stroke(0);
     ellipse(xPosition, yPosition, 25, 25);
     
-    // Setting up the eye bright:
+    // Setting up the eye brightness:
     fill(255);
     stroke(0);
     ellipse(xPosition-5, yPosition-5, 8, 8);
