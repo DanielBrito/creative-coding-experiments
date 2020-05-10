@@ -35,21 +35,54 @@ void setup() {
     frameRate(0.5);
 }
 
+// Configuring and printing the code line number:
+void configureDefaultCodeLine(String line, int yPos){
+
+    // Printing code line number:
+    fill(180);
+    text(line, 30, yPos);
+    
+    // Setting up the default color style:
+    fill(255);    
+}
+
+// Printing and configuring a given line character:
+void printCharacter(Character letter){
+    
+    // Configuring the character to be printed:
+    text(letter, xPos, yPos);
+
+    // Setting up the position (x-axis) of the next character:
+    xPos += textWidth(letter);
+
+    // Delay between each printed character:
+    frameRate(8);
+}
+
+void configureNewLine(){
+
+    // Setting up next line:
+    index++;
+    
+    // Restarting to the first line character:
+    i=0;
+    
+    // Setting up the position of the new line:
+    xPos = 90;
+    yPos += 35;
+}
+
 void draw() {
 
     // Configuring the text:
     fill(255);
     textSize(25);
 
-    // Printing each line separetely, because each one has different styles:
+    // Printing the lines separetely, because each one has different styles:
     
     if (index==0) {
         
-        // Printing the line of the code:
-        fill(180);
-        text("1", 30, 110);
-        
-        fill(255);
+        configureDefaultCodeLine("1", 110);
         
         // Printing each character of a given line:
         if (i<lines[index].length()) {
@@ -61,68 +94,35 @@ void draw() {
             else{
                 fill(237, 223, 116);
             }
-
-            // Configuring the character to be printed:
-            text(lines[index].charAt(i), xPos, yPos);
-
-            // Setting up the position (x-axis) of the next character:
-            xPos += textWidth(lines[index].charAt(i));
-
-            // Delay between each printed character:
-            frameRate(8);
+            
+            printCharacter(lines[index].charAt(i++));
         } 
         // The line was completely printed
         else {
             
-            // Setting up next line:
-            index++;
-            
-            // Restarting to the first line character:
-            i=-1;
-            
-            // Setting up the position of the new line:
-            xPos = 90;
-            yPos += 35;
+            configureNewLine();
         }
-
-        // Incrementing (next character of the line):
-        i++;
     }
     
     // The next conditions follow the same idea:
 
     if (index==1) {
         
-        fill(180);
-        text("2", 30, 145);
-        
-        fill(255);
+        configureDefaultCodeLine("2", 145);
 
         if (i<lines[index].length()) {
             
-            text(lines[index].charAt(i), xPos, yPos);
-
-            xPos += textWidth(lines[index].charAt(i));
-
-            frameRate(8);
+            printCharacter(lines[index].charAt(i++));
         } 
         else {
             
-            index++;
-            i=-1;
-            xPos = 90;
-            yPos += 35;
+            configureNewLine();
         }
-
-        i++;
     }
 
     if (index==2) {
         
-        fill(180);
-        text("3", 30, 180);
-        
-        fill(255);
+        configureDefaultCodeLine("3", 180);
 
         if (i<lines[index].length()) {
             
@@ -141,29 +141,17 @@ void draw() {
                 fill(255);
             }
 
-            text(lines[index].charAt(i), xPos, yPos);
-
-            xPos += textWidth(lines[index].charAt(i));
-
-            frameRate(8);
+            printCharacter(lines[index].charAt(i++));
         } 
         else {
             
-            index++;
-            i=-1;
-            xPos = 90;
-            yPos += 35;
+            configureNewLine();
         }
-
-        i++;
     }
     
     if (index==3) {
         
-        fill(180);
-        text("4", 30, 215);
-        
-        fill(255);
+        configureDefaultCodeLine("4", 215);
 
         if (i<lines[index].length()) {
             
@@ -178,29 +166,17 @@ void draw() {
                 fill(255);
             }
 
-            text(lines[index].charAt(i), xPos, yPos);
-
-            xPos += textWidth(lines[index].charAt(i));
-
-            frameRate(8);
+            printCharacter(lines[index].charAt(i++));
         } 
         else {
             
-            index++;
-            i=-1;
-            xPos = 90;
-            yPos += 35;
+            configureNewLine();
         }
-
-        i++;
     }
     
     if (index==4) {
         
-        fill(180);
-        text("5", 30, 250);
-        
-        fill(255);
+        configureDefaultCodeLine("5", 250);
 
         if (i<lines[index].length()) {
             
@@ -211,71 +187,39 @@ void draw() {
                 fill(255);
             }
 
-            text(lines[index].charAt(i), xPos, yPos);
-
-            xPos += textWidth(lines[index].charAt(i));
-
-            frameRate(8);
+            printCharacter(lines[index].charAt(i++));
         } 
         else {
             
-            index++;
-            i=-1;
-            xPos = 90;
-            yPos += 35;
+            configureNewLine();
         }
-
-        i++;
     }
 
     if (index==5) {
         
-        fill(180);
-        text("6", 30, 285);
-        
-        fill(255);
+        configureDefaultCodeLine("6", 285);
 
         if (i<lines[index].length()) {
 
-            text(lines[index].charAt(i), xPos, yPos);
-
-            xPos += textWidth(lines[index].charAt(i));
-
-            frameRate(8);
+            printCharacter(lines[index].charAt(i++));
         } 
         else {
             
-            index++;
-            i=-1;
-            xPos = 90;
-            yPos += 35;
+            configureNewLine();
         }
-
-        i++;
     }
     
     if (index==6) {
         
-        fill(180);
-        text("7", 30, 325);
-        fill(255);
+        configureDefaultCodeLine("7", 325);
 
         if (i<lines[index].length()) {
 
-            text(lines[index].charAt(i), xPos, yPos);
-
-            xPos += textWidth(lines[index].charAt(i));
-
-            frameRate(8);
+            printCharacter(lines[index].charAt(i++));
         } 
         else {
             
-            index++;
-            i=-1;
-            xPos = 90;
-            yPos += 35;
+            configureNewLine();
         }
-
-        i++;
     }
 }
