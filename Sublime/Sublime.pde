@@ -43,7 +43,6 @@ void draw() {
 
     // Printing each line separetely, because each one has different styles:
     
-    // #include<inspiration.h>
     if (index==0) {
         
         // Printing the line of the code:
@@ -90,7 +89,7 @@ void draw() {
         i++;
     }
     
-    // The following conditions follow the same idea:
+    // The next conditions follow the same idea:
 
     if (index==1) {
         
