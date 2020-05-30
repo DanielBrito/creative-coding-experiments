@@ -1,6 +1,6 @@
 # CREATIVE CODING EXPERIMENTS
 
-These are my creative coding experiments using some technologies that I'm exploring, such as [Processing](https://processing.org/), [p5.js](https://p5js.org/), [Cinder](https://libcinder.org/), [openFrameworks](https://openframeworks.cc/), and others, based on my research about [Generative Design](https://github.com/DanielBrito/generative-design), which inspired the creation of Compixelar.
+These are my creative coding experiments using some technologies that I'm exploring, such as [Processing](https://processing.org/), [p5.js](https://p5js.org/), [Cinder](https://libcinder.org/), [openFrameworks](https://openframeworks.cc/), and others, based on my research about [Generative Design](https://github.com/DanielBrito/generative-design), which inspired the creation of:
 
 [Compixelar](https://medium.com/compixelar) intends to apply some concepts of creative programming on the development of poetic-visual experiments and the composition of multimedia animations.
 
