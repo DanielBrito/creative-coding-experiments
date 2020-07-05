@@ -2,4 +2,8 @@
 
 Compixelar Edit Text é um mini editor de texto, baseado na minha releitura do alfabeto, onde cada uma das letras é representada por um [Aluminion](https://www.instagram.com/aluminions.13/).
 
-![Edit Text](https://github.com/DanielBrito/creative-coding-experiments/blob/master/CodingExperiments/creative-coding-experiment.gif)
+Confesso que fiquei até surpreso com o que acabei fazendo, pois algumas coisas nem estavam no meu plano inicial.
+
+Além da transformação de cada letra em um respectivo Aluminion, criei uma espécie de paginação, para quando usuário chegar no final da página. Também decidi incluir uma opção para o usuário criar um novo documento ou salvar o conteúdo digitado em um arquivo de texto.
+
+![Edit Text](preview.gif)

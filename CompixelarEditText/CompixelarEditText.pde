@@ -1,21 +1,21 @@
-// To store the image of each letter:
+// Stores the image of each letter:
 PImage[] letters = new PImage[26];
 
-// Constants do define each letter dimension:
+// Define each letter dimension:
 int fontSize = 50;
 int fontSizeWidth = 15;
 
-// Constants to define the space between letters and lines:
+// Define the space between letters and lines:
 int spaceBetweenChar = 60;
 int spaceBetweenLine = 50;
 
-// Constant to define the beginning position in the x-axis:
+// Define the beginning position in the x-axis:
 int marginLeft = 20;
 
-// To store the text typed by the user, which will be store in a text file:
+// Stores the text typed by the user, which will be store in a text file:
 String typedText = "";
 
-// To show which page the user is currently:
+// Shows which page the user is:
 int page = 1;
 
 // Helps to draw the close button on the top-right corner:
@@ -64,7 +64,6 @@ void generateUIEnvironment(){
     
     generateHeader();    
     generateFooter();
-   
 }
 
 // Function to handle the display and interaction with the user:
@@ -120,7 +119,7 @@ void handleButtons(){
         text("Save", 105, 20);
     }
     
-    // Configuring ellipse to handle on mouse over event:
+    // Configuring ellipse to handle 'on mouse over' event:
     ellipseMode(RADIUS); 
     
     // If the cursor is over the 'Close'
@@ -151,11 +150,13 @@ void mousePressed() {
     
     // If the mouse is over the 'New' file button:
     if (mouseX>=15 && mouseX<=65 && mouseY>=5 && mouseY<=27) {
+
         newFile();
     }
   
     // If the mouse is over the 'Save' file button:
     if (mouseX>=80 && mouseX<=130 && mouseY>=5 && mouseY<=27) {
+    
         saveFile();
     } 
   
@@ -173,7 +174,6 @@ void newFile(){
     page = 1;
     
     setInitialPosition();
-    
     generateUIEnvironment();    
   
     // Reopening the file (empty):
@@ -185,8 +185,6 @@ void newFile(){
 
 // Function to handle process od saving the text inside the file:
 void saveFile(){
-    
-    println(typedText);
     
     // Save the text inside the file:
     output.print(typedText);
@@ -221,7 +219,7 @@ void finishProgram(){
 // Configuring and displaying the 'window title':
 void generateHeader(){
     
-    // Setting up the backgorung:
+    // Setting up the background:
     fill(0);
     stroke(0);
     rect(0, 0, width, 30);
@@ -271,11 +269,18 @@ void loadAlphabet(){
     
     for(int i=0; i<letters.length; i++){
         
-        // Using some tricks using the ASCII reference to read the files from the disk:
+        // Some tricks using ASCII reference to read the files from the disk:
         char ch = (char)(i+65);
         String imageFile = ch + ".png";
         letters[i] = loadImage(imageFile);
     }
+}
+
+// Setting up a new line of text:
+void startNewLine(){
+
+    posX = marginLeft;
+    posY += fontSize+spaceBetweenLine;
 }
 
 // Displaying a static cursor to show where the next character will be placed: 
@@ -307,14 +312,11 @@ public void keyPressed(){
         posX += spaceBetweenChar;
         typedText += " ";
         
-        // Cheching if the user reached the end of the screen (horizontally):
+        // Checking if the user reached the end of the screen (horizontally):
         if(posX+fontSize+10>width){
             
             removeCursor();
-            
-            // Starting a new line:
-            posX = marginLeft;
-            posY += fontSize+spaceBetweenLine;
+            startNewLine();
         }
         
         insertCursor();
@@ -348,10 +350,7 @@ public void keyPressed(){
     if(key==ENTER){
         
         removeCursor();
-        
-        // Setting up the position to insert the new character:
-        posY += fontSize+spaceBetweenLine;
-        posX = marginLeft;
+        startNewLine();
         
         // Generating new pages if the user reaches the end of them:
         if(posY>height-fontSize){
@@ -363,15 +362,10 @@ public void keyPressed(){
         insertCursor();
         
         typedText += "\n";
-        
     }
     
     // Removing characters from the text:
     if(key==BACKSPACE){
-        
-        //if(posY+fontSize>height){
-        //    return;
-        //}
         
         // Checking if the current character is the first of the line:
         if(posX==20 && posY>100){
@@ -421,10 +415,7 @@ public void keyPressed(){
         if(posX+fontSize+10>width){
             
             removeCursor();
-            
-            // Starting a new line:
-            posX = marginLeft;
-            posY += fontSize+spaceBetweenLine;
+            startNewLine();
         }
         
         // Concatenating each letter to create the text:
