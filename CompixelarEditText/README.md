@@ -1,6 +1,6 @@
 # Compixelar Edit Text
 
-Compixelar Edit Text é um mini editor de texto, baseado na minha releitura do alfabeto, onde cada uma das letras é representada por um [Aluminion](https://www.instagram.com/aluminions.13/).
+Compixelar Edit Text é um editor de texto experimental, baseado na minha releitura do alfabeto, onde cada uma das letras é representada por um [Aluminion](https://www.instagram.com/aluminions.13/).
 
 Confesso que fiquei até surpreso com o resultado, pois algumas coisas nem estavam no meu plano inicial.
 
