@@ -1,6 +1,6 @@
 # Creative Coding Experiments
 
-These are my creative coding experiments using technologies such as [Processing](https://processing.org/), based on my research about [Generative Design](https://github.com/DanielBrito/generative-design), which inspired the creation of:
+These are my creative coding experiments (using technologies such as [Processing](https://processing.org/)), based on my research about [Generative Design](https://github.com/DanielBrito/generative-design), which inspired the creation of:
 
 [Compixelar](https://medium.com/compixelar) intends to apply some concepts of creative programming on the development of poetic-visual experiments and the composition of multimedia animations.
 
